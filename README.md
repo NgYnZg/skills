@@ -49,3 +49,9 @@ These skills are designed to be opinionated but minimal. The focus is on writing
 5. Ask `/refer-okf` to answer questions grounded in the knowledge base.
 
 Each skill's full behavior is documented in its own `SKILL.md` under `skills/<name>/`.
+
+## Future enhancements
+
+- **Visualization** — generate a browsable graph view of the OKF bundle (concepts, decisions, systems, tables, cross-links). A static HTML page using [Cytoscape.js](https://js.cytoscape.org/) is the simplest path: read the bundle, build a JSON graph, and ship one self-contained file.
+- **Evaluation metrics** — measure OKF quality and coverage over time: concept coverage against the codebase, decision freshness, broken cross-links, glossary accuracy, and `/refer-okf` answer precision. Start with a small script that counts stubs, orphan files, and missing links.
+- **Automatic grounding** — make other skills consult the OKF bundle without requiring the user to type `/refer-okf`. The repo's agent instructions (`docs/agents/okf.md`) can instruct all skills to read `docs/app/index.md` first when answering project questions, so grounding becomes the default behavior.
